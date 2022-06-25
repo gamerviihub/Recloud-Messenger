@@ -10,16 +10,24 @@ namespace Messanger.Client.ViewModels
 {
     public class PreloaderPageViewModel : MvxViewModel
     {
+        IConnectivity Connectivity;
+
         public IMvxCommand LoginPageCommand => new MvxCommand(LoginPage);
 
-        private void LoginPage()
+        private async void LoginPage()
         {
-
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Shell.Current.DisplayAlert("Ошибка", "Упс, на вашем устройстве нет подключения к интернету!", "Закрыть");
+                return;
+            }
+            await Shell.Current.GoToAsync(nameof(LoginPage));
         }
 
-        public PreloaderPageViewModel()
-        {
 
+        public PreloaderPageViewModel(IConnectivity connectivity)
+        {
+            Connectivity = connectivity;
         }
     }
 }

@@ -116,6 +116,9 @@
                 </VisualStateGroup>
             </VisualStateGroupList>
         </Setter>
+
+        <Setter Property="Placeholder" Value="">
+        </Setter>
     </Style>
 
     <Style TargetType="Frame">

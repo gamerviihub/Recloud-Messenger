@@ -14,8 +14,7 @@
         <vm:AppShellViewModel />
     </Shell.BindingContext>
 
-    <ShellContent
-        Title="Home"
+    <ShellContent 
         ContentTemplate="{DataTemplate pages:PreloaderPage}"
         Route="PreloaderPage" />
 

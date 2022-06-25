@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Messanger.Client.Views.LoginPage"
+             x:DataType="vm:LoginPageViewModel"
+             xmlns:vm="clr-namespace:Messanger.Client.ViewModels"
+             Title="LoginPage">
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+        <Image
+            Source="logo.png"
+            SemanticProperties.Description="Messanger logotype"
+            HeightRequest="100"
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="Авторизация"
+            SemanticProperties.HeadingLevel="Level9"
+            FontSize="22"
+            FontAttributes="Bold"
+            TextColor="{StaticResource Black}"
+            HorizontalOptions="Center" />
+
+        <Grid ColumnDefinitions="*, 350, *">
+
+            <StackLayout Grid.Column="1" Spacing="20">
+                <Entry Placeholder="Введите логин" Text="{Binding Login}" HeightRequest="50"/>
+                <Button 
+                        Text="Продолжить"
+                        Command="{Binding CheckAccountCommand}"
+                        SemanticProperties.Hint="Counts the number of times you click"
+                        HorizontalOptions="Center"/>
+            </StackLayout>
+
+
+
+        </Grid>
+
+
+    </VerticalStackLayout>
+</ContentPage>

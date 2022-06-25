@@ -6,19 +6,18 @@
              Title="PreloaderPage"
              x:DataType="vm:PreloaderPageViewModel">
 
-    <ScrollView>
-        <VerticalStackLayout 
+    <VerticalStackLayout 
             Spacing="25" 
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <Image
+        <Image
             Source="logo.png"
             SemanticProperties.Description="Messanger logotype"
             HeightRequest="150"
             HorizontalOptions="Center" />
 
-            <Label 
+        <Label 
             Text="Recloud Messanger"
             SemanticProperties.HeadingLevel="Level9"
             FontSize="32"
@@ -26,24 +25,23 @@
             TextColor="{StaticResource Black}"
             HorizontalOptions="Center" />
 
-            <Label 
+        <Label 
             Text="Легкий и удобный корпоративный мессенджер, который не зависит от внешних ресурсов и будет работать внутри вашей локальной сети даже при полном отсутствии доступа в интернет."
-            SemanticProperties.HeadingLevel="Level2"
+            SemanticProperties.HeadingLevel="Level1"
             SemanticProperties.Description="Легкий и удобный корпоративный мессенджер, который не зависит от внешних ресурсов и будет работать внутри вашей локальной сети даже при полном отсутствии доступа в интернет."
             FontSize="14"
             LineHeight="1.7"
+                MaximumWidthRequest="350"
             HorizontalTextAlignment="Center"
-            MaximumWidthRequest="450"
             TextColor="{StaticResource TextContent}"
             HorizontalOptions="Center" />
 
-            <Button 
+        <Button 
             x:Name="CounterBtn"
             Text="Начать работу"
                 Command="{Binding LoginPageCommand}"
             SemanticProperties.Hint="Counts the number of times you click"
             HorizontalOptions="Center"/>
 
-        </VerticalStackLayout>
-    </ScrollView>
+    </VerticalStackLayout>
 </ContentPage>

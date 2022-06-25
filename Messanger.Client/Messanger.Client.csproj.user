@@ -28,6 +28,9 @@
     <MauiXaml Update="Resources\Styles.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\PreloaderPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

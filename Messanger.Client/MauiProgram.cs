@@ -16,8 +16,13 @@ namespace Messanger.Client
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+
             builder.Services.AddSingleton<PreloaderPage>();
             builder.Services.AddSingleton<PreloaderPageViewModel>();
+
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<LoginPageViewModel>();
 
 
             return builder.Build();
