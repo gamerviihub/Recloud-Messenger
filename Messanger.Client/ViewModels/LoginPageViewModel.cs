@@ -18,6 +18,8 @@ namespace Messanger.Client.ViewModels
 
         #region Переменные
 
+        private Models.Config Config;
+
         #region Логин пользователя
         private string _Login = String.Empty;
         public string Login
@@ -41,17 +43,23 @@ namespace Messanger.Client.ViewModels
                 return;
             }
 
-            User user = await UserApi.GetUserInfo(Login);
+            User user = await UserApi.GetUserInfo(Login, Config);
 
             if (user.IsRegisteredEnded)
             {
-
+                await Shell.Current.GoToAsync(nameof(AuthContinuePage),
+                    new Dictionary<string, object> {
+                        { "User", user },
+                        { "Config", Config }
+                    }
+                );
             }
             else
             {
-                await Shell.Current.GoToAsync(nameof(RegistrationContinue),
+                await Shell.Current.GoToAsync(nameof(RegistrationContinuePage),
                     new Dictionary<string, object> {
-                        { "User", user }
+                        { "User", user },
+                        { "Config", Config }
                     }
                 );
             }
@@ -61,9 +69,9 @@ namespace Messanger.Client.ViewModels
         #endregion
         #endregion
 
-        public LoginPageViewModel()
+        public LoginPageViewModel(Models.Config config)
         {
-
+            Config = config;
         }
     }
 }

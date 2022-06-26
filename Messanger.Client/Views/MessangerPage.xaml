@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Messanger.Client.ViewModels"
+             x:Class="Messanger.Client.Views.MessangerPage"
+             x:DataType="vm:MessangerPageViewModel"
+             Title="Messanger">
+    <Grid ColumnDefinitions="60, 300, *">
+
+        <StackLayout Grid.Column="0" Spacing="10">
+            <Image Source="logo.png"
+                   SemanticProperties.Description="Messanger logotype"
+                   HeightRequest="40"
+                   Margin="0,15,0,0"
+                   HorizontalOptions="Center"/>
+
+            <Border Background="{StaticResource Border}" HeightRequest="3"/>
+
+
+            <ImageButton Source="home_icon.png"
+                             Scale="0.5"
+                             SemanticProperties.Description="Home icon" />
+
+
+            <ImageButton Source="message_icon.png" 
+                             Scale="0.5"
+                             SemanticProperties.Description="Home icon"/>
+
+
+        </StackLayout>
+
+        <Border Grid.Column="1" StrokeShape="Rectangle" Stroke="{StaticResource Border}">
+            <StackLayout Padding="15,0,15,15">
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Сообщения" VerticalOptions="Center" FontAttributes="Bold" FontSize="18"/>
+                    <Border Background="{StaticResource Border}" Margin="10" StrokeShape="RoundRectangle 4,4,4,4" StrokeThickness="0">
+                        <Label Text="42" VerticalOptions="Center" Padding="10, 5" FontAttributes="Bold" TextColor="{StaticResource IconsContent}"/>
+                    </Border>
+
+                </StackLayout>
+                <Label Text="{Binding User.Login}"/>
+
+            </StackLayout>
+        </Border>
+
+    </Grid>
+</ContentPage>

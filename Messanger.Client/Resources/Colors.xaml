@@ -7,6 +7,8 @@
     <Color x:Key="Primary">#3079FF</Color>
     <Color x:Key="Light">#F5F5F5</Color>
     <Color x:Key="TextContent">#768194</Color>
+    <Color x:Key="Border">#EDF0F4</Color>
+    <Color x:Key="IconsContent">#768194</Color>
     
     
     <Color x:Key="Dark">#3F4248</Color>

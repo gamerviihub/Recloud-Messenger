@@ -1,4 +1,5 @@
 ﻿using Messanger.Client.Services.API;
+using Messanger.Client.Views;
 using Messanger.Server.DataBase.Models;
 using MvvmCross.Commands;
 using MvvmCross.ViewModels;
@@ -10,10 +11,11 @@ using System.Threading.Tasks;
 
 namespace Messanger.Client.ViewModels
 {
-    
+
 
     [QueryProperty("User", "User")]
-    public class RegistrationContinueViewModel : MvxViewModel
+    [QueryProperty("Config", "Config")]
+    public class RegistrationContinuePageViewModel : MvxViewModel
     {
         #region Переменные
 
@@ -23,6 +25,14 @@ namespace Messanger.Client.ViewModels
         {
             get { return _User; }
             set { SetProperty(ref _User, value); }
+        }
+        #endregion
+        #region Конфиг
+        private Models.Config _Config;
+        public Models.Config Config
+        {
+            get { return _Config; }
+            set { SetProperty(ref _Config, value); }
         }
         #endregion
         #region Пароль пользователя
@@ -65,14 +75,22 @@ namespace Messanger.Client.ViewModels
             // ToDo: Сделать хеширование пароля
             User.Password = Password;
 
-            var newUser = await UserApi.UpdateUser(User.Id, User);
+            var newUser = await UserApi.UpdateUser(User.Id, User, Config);
+
+            await Shell.Current.GoToAsync(nameof(MessangerPage),
+                new Dictionary<string, object>
+                {
+                    { "User", User },
+                    { "Config", Config },
+                }
+            );
 
 
         }
         #endregion
         #endregion
 
-        public RegistrationContinueViewModel()
+        public RegistrationContinuePageViewModel()
         {
 
         }

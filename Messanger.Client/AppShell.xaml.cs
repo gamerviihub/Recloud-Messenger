@@ -9,7 +9,10 @@ namespace Messanger.Client
             InitializeComponent();
 
             Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
-            Routing.RegisterRoute(nameof(RegistrationContinue), typeof(RegistrationContinue));
+            Routing.RegisterRoute(nameof(RegistrationContinuePage), typeof(RegistrationContinuePage));
+            Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+            Routing.RegisterRoute(nameof(MessangerPage), typeof(MessangerPage));
+            Routing.RegisterRoute(nameof(AuthContinuePage), typeof(AuthContinuePage));
         }
     }
 }

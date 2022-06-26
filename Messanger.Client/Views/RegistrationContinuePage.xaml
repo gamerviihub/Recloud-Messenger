@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Messanger.Client.Views.RegistrationContinue"
+             x:Class="Messanger.Client.Views.RegistrationContinuePage"
              xmlns:vm="clr-namespace:Messanger.Client.ViewModels"
-             x:DataType="vm:RegistrationContinueViewModel"
+             x:DataType="vm:RegistrationContinuePageViewModel"
              Title="RegistrationContinue"
              >
     <VerticalStackLayout 

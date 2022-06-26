@@ -12,3 +12,4 @@
 /Messanger.Server/DataBase.db-shm
 /Messanger.Server/DataBase.db-wal
 /packages
+/Messanger.Client/config.json

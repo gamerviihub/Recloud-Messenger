@@ -16,16 +16,26 @@ namespace Messanger.Client
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            Models.Config config = Models.Config.LoadConfig().Result;
+
             builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
 
             builder.Services.AddSingleton<PreloaderPage>();
+            builder.Services.AddSingleton<Models.Config>(config);
+
             builder.Services.AddSingleton<PreloaderPageViewModel>();
 
-            builder.Services.AddSingleton<RegistrationContinue>();
-            builder.Services.AddSingleton<RegistrationContinueViewModel>();
+            builder.Services.AddSingleton<RegistrationContinuePage>();
+            builder.Services.AddSingleton<RegistrationContinuePageViewModel>();
+
+            builder.Services.AddTransient<MessangerPage>();
+            builder.Services.AddTransient<MessangerPageViewModel>();
 
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<LoginPageViewModel>();
+
+            builder.Services.AddTransient<AuthContinuePage>();
+            builder.Services.AddTransient<AuthContinuePageViewModel>();
 
 
             return builder.Build();

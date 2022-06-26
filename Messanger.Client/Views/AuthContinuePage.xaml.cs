@@ -2,12 +2,11 @@ using Messanger.Client.ViewModels;
 
 namespace Messanger.Client.Views;
 
-public partial class RegistrationContinue : ContentPage
+public partial class AuthContinuePage : ContentPage
 {
-	public RegistrationContinue(RegistrationContinueViewModel vm)
+	public AuthContinuePage(AuthContinuePageViewModel vm)
 	{
 		InitializeComponent();
-
 		BindingContext = vm;
 	}
 }
