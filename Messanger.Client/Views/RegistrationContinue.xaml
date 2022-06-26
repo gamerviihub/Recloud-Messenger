@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Messanger.Client.Views.RegistrationContinue"
+             xmlns:vm="clr-namespace:Messanger.Client.ViewModels"
+             x:DataType="vm:RegistrationContinueViewModel"
+             Title="RegistrationContinue"
+             >
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+        <Image
+            Source="logo.png"
+            SemanticProperties.Description="Messanger logotype"
+            HeightRequest="100"
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="Продолжение регистрации"
+            SemanticProperties.HeadingLevel="Level9"
+            FontSize="22"
+            FontAttributes="Bold"
+            TextColor="{StaticResource Black}"
+            HorizontalOptions="Center" />
+
+        <Grid ColumnDefinitions="*, 350, *">
+
+            <StackLayout Grid.Column="1" Spacing="20">
+                <Entry Placeholder="Введите пароль" IsPassword="True" Text="{Binding Password}" HeightRequest="50"/>
+                <Entry Placeholder="Повторите пароль" IsPassword="True" Text="{Binding ConfirmPassword}" HeightRequest="50"/>
+                <Button 
+                        Text="Продолжить"
+                        Command="{Binding ContinueRegistrationCommand}"
+                        SemanticProperties.Hint="Продолжение регистрации"
+                        HorizontalOptions="Center"/>
+            </StackLayout>
+
+
+
+        </Grid>
+
+
+    </VerticalStackLayout>
+</ContentPage>

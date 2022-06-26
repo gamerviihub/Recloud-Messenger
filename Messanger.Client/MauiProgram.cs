@@ -21,6 +21,9 @@ namespace Messanger.Client
             builder.Services.AddSingleton<PreloaderPage>();
             builder.Services.AddSingleton<PreloaderPageViewModel>();
 
+            builder.Services.AddSingleton<RegistrationContinue>();
+            builder.Services.AddSingleton<RegistrationContinueViewModel>();
+
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<LoginPageViewModel>();
 

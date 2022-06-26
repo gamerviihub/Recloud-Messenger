@@ -4,4 +4,11 @@
 
 /.vs
 /Messanger.Client/obj
-/Messanger.Client/bin/
+/Messanger.Client/bin
+/Messanger.DataBase/obj
+/Messanger.Server/bin
+/Messanger.Server/obj
+/Messanger.Server/DataBase.db
+/Messanger.Server/DataBase.db-shm
+/Messanger.Server/DataBase.db-wal
+/packages
